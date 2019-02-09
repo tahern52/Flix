@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -37,7 +38,9 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.movies = dataDictionary["results"] as! [[String: Any]]
                 
                 // TODO: Store the movies in a property to use elsewhere
-                // TODO: Reload your table view data
+                
+                // Reload your table view data
+                self.tableView.reloadData()
                 
             }
         }
@@ -46,15 +49,31 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     // Prototype functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
         
-        cell.textLabel!.text = "row: \(indexPath.row)"
+        let movie = movies[indexPath.row]
+        let title = movie["title"] as! String
+        let synopsis = movie["overview"] as! String
+        
+        cell.titleLabel!.text = title
+        cell.synopsisLabel!.text = synopsis
+        
+        let baseURL = "https://image.tmdb.org/t/p/w1280"
+        let poster = movie["backdrop_path"] as! String
+        let posterURL = URL(string: baseURL + poster)
+        
+        cell.posterView.af_setImage(withURL: posterURL!)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
