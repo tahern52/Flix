@@ -36,8 +36,9 @@ class TrailerViewController: UIViewController {
                 
                 // TODO: Store the movies in a property to use elsewhere
 
-                let url = URL(string: "https://www.youtube.com/embed/\(key ?? "tAsegDwGJGA")")
+                let url = URL(string: "https://www.youtube.com/embed/\(key ?? "tAsegDwGJGA")?rel=0;&autoplay=1")
                 
+                print(url)
                 self.webView.load(URLRequest(url: url!))
             }
         }
