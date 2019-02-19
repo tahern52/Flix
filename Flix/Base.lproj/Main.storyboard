@@ -26,7 +26,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIz-ip-WUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1329" y="-1136"/>
+            <point key="canvasLocation" x="-1631" y="-1109"/>
         </scene>
         <!--Superhero-->
         <scene sceneID="jhg-TI-JHg">
@@ -230,7 +230,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaR-By-Kl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2399" y="-362"/>
+            <point key="canvasLocation" x="-2399" y="-344"/>
         </scene>
         <!--Superhero-->
         <scene sceneID="vi8-YW-88E">
@@ -249,7 +249,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nja-TF-ufO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-826.39999999999998" y="-344.07796101949026"/>
+            <point key="canvasLocation" x="-826" y="-344"/>
         </scene>
         <!--Trailer View Controller-->
         <scene sceneID="Mcf-WF-TBO">
@@ -268,13 +268,15 @@
                                     <action selector="backPressed:" destination="v8Q-4i-7Qe" eventType="touchUpInside" id="wM4-xf-hoS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4V-WU-N2X">
-                                <rect key="frame" x="91" y="187" width="220" height="320"/>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="reS-cl-GT8">
+                                <rect key="frame" x="0.0" y="73" width="375" height="594"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -284,12 +286,12 @@
                         <viewLayoutGuide key="safeArea" id="evT-v4-x5G"/>
                     </view>
                     <connections>
-                        <outlet property="titleLabel" destination="Q4V-WU-N2X" id="fU0-W2-EL3"/>
+                        <outlet property="webView" destination="reS-cl-GT8" id="n62-at-33Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h47-az-OUj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1631.2" y="1052.9235382308846"/>
+            <point key="canvasLocation" x="-1631" y="1065"/>
         </scene>
         <!--Movie Grid Details View Controller-->
         <scene sceneID="A3L-IM-fsW">
